@@ -97,7 +97,7 @@
             // 
             this.pBase.Location = new System.Drawing.Point(-3, 0);
             this.pBase.Name = "pBase";
-            this.pBase.Size = new System.Drawing.Size(615, 404);
+            this.pBase.Size = new System.Drawing.Size(615, 434);
             this.pBase.TabIndex = 2;
             this.pBase.TabStop = false;
             // 

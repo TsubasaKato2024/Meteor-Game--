@@ -28,22 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pBG = new System.Windows.Forms.PictureBox();
-            this.pMeteor = new System.Windows.Forms.PictureBox();
+            this.pMsg = new System.Windows.Forms.PictureBox();
+            this.pGameover = new System.Windows.Forms.PictureBox();
+            this.pTitle = new System.Windows.Forms.PictureBox();
+            this.pExp = new System.Windows.Forms.PictureBox();
+            this.pPlayer = new System.Windows.Forms.PictureBox();
             this.pBase = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pBG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pMeteor)).BeginInit();
+            this.pMeteor = new System.Windows.Forms.PictureBox();
+            this.pBG = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pMsg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pGameover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pExp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMeteor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBG)).BeginInit();
             this.SuspendLayout();
             // 
-            // pBG
+            // pMsg
             // 
-            this.pBG.Image = global::Meteor_Game.Properties.Resources.背景_宇宙_;
-            this.pBG.Location = new System.Drawing.Point(12, 12);
-            this.pBG.Name = "pBG";
-            this.pBG.Size = new System.Drawing.Size(170, 124);
-            this.pBG.TabIndex = 1;
-            this.pBG.TabStop = false;
+            this.pMsg.Image = global::Meteor_Game.Properties.Resources.メッセージ_メテオ_;
+            this.pMsg.Location = new System.Drawing.Point(261, 172);
+            this.pMsg.Name = "pMsg";
+            this.pMsg.Size = new System.Drawing.Size(98, 49);
+            this.pMsg.TabIndex = 7;
+            this.pMsg.TabStop = false;
+            // 
+            // pGameover
+            // 
+            this.pGameover.Image = global::Meteor_Game.Properties.Resources.ゲームオーバー_メテオ_;
+            this.pGameover.Location = new System.Drawing.Point(323, 35);
+            this.pGameover.Name = "pGameover";
+            this.pGameover.Size = new System.Drawing.Size(111, 75);
+            this.pGameover.TabIndex = 6;
+            this.pGameover.TabStop = false;
+            // 
+            // pTitle
+            // 
+            this.pTitle.Image = global::Meteor_Game.Properties.Resources.タイトル_メテオ_;
+            this.pTitle.Location = new System.Drawing.Point(85, 154);
+            this.pTitle.Name = "pTitle";
+            this.pTitle.Size = new System.Drawing.Size(140, 94);
+            this.pTitle.TabIndex = 5;
+            this.pTitle.TabStop = false;
+            // 
+            // pExp
+            // 
+            this.pExp.Image = global::Meteor_Game.Properties.Resources.爆発;
+            this.pExp.Location = new System.Drawing.Point(199, 34);
+            this.pExp.Name = "pExp";
+            this.pExp.Size = new System.Drawing.Size(104, 70);
+            this.pExp.TabIndex = 4;
+            this.pExp.TabStop = false;
+            // 
+            // pPlayer
+            // 
+            this.pPlayer.Image = global::Meteor_Game.Properties.Resources.自機;
+            this.pPlayer.Location = new System.Drawing.Point(12, 180);
+            this.pPlayer.Name = "pPlayer";
+            this.pPlayer.Size = new System.Drawing.Size(51, 55);
+            this.pPlayer.TabIndex = 3;
+            this.pPlayer.TabStop = false;
+            // 
+            // pBase
+            // 
+            this.pBase.Location = new System.Drawing.Point(231, 12);
+            this.pBase.Name = "pBase";
+            this.pBase.Size = new System.Drawing.Size(219, 249);
+            this.pBase.TabIndex = 2;
+            this.pBase.TabStop = false;
             // 
             // pMeteor
             // 
@@ -54,28 +108,39 @@
             this.pMeteor.TabIndex = 0;
             this.pMeteor.TabStop = false;
             // 
-            // pBase
+            // pBG
             // 
-            this.pBase.Location = new System.Drawing.Point(231, 12);
-            this.pBase.Name = "pBase";
-            this.pBase.Size = new System.Drawing.Size(219, 249);
-            this.pBase.TabIndex = 2;
-            this.pBase.TabStop = false;
+            this.pBG.Image = global::Meteor_Game.Properties.Resources.背景_宇宙_;
+            this.pBG.Location = new System.Drawing.Point(12, 12);
+            this.pBG.Name = "pBG";
+            this.pBG.Size = new System.Drawing.Size(170, 124);
+            this.pBG.TabIndex = 1;
+            this.pBG.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 273);
+            this.Controls.Add(this.pMsg);
+            this.Controls.Add(this.pGameover);
+            this.Controls.Add(this.pTitle);
+            this.Controls.Add(this.pExp);
+            this.Controls.Add(this.pPlayer);
             this.Controls.Add(this.pBase);
             this.Controls.Add(this.pMeteor);
             this.Controls.Add(this.pBG);
             this.Name = "Form1";
             this.Text = "メテオゲーム";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pBG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pMeteor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMsg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pGameover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMeteor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBG)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,6 +150,11 @@
         private System.Windows.Forms.PictureBox pMeteor;
         private System.Windows.Forms.PictureBox pBG;
         private System.Windows.Forms.PictureBox pBase;
+        private System.Windows.Forms.PictureBox pPlayer;
+        private System.Windows.Forms.PictureBox pExp;
+        private System.Windows.Forms.PictureBox pTitle;
+        private System.Windows.Forms.PictureBox pGameover;
+        private System.Windows.Forms.PictureBox pMsg;
     }
 }
 

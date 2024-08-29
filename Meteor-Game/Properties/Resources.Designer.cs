@@ -63,9 +63,59 @@ namespace Meteor_Game.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap ゲームオーバー_メテオ_ {
+            get {
+                object obj = ResourceManager.GetObject("ゲームオーバー(メテオ)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap タイトル_メテオ_ {
+            get {
+                object obj = ResourceManager.GetObject("タイトル(メテオ)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap メッセージ_メテオ_ {
+            get {
+                object obj = ResourceManager.GetObject("メッセージ(メテオ)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap 爆発 {
+            get {
+                object obj = ResourceManager.GetObject("爆発", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap 背景_宇宙_ {
             get {
                 object obj = ResourceManager.GetObject("背景(宇宙)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap 自機 {
+            get {
+                object obj = ResourceManager.GetObject("自機", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

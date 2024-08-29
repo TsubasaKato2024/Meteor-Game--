@@ -21,6 +21,14 @@ namespace Meteor_Game
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pMeteor.Hide();
+            pPlayer.Hide();
+            pBG.Hide();
+            pExp.Hide();
+            pGameover.Hide();
+            pMsg.Hide();
+            pTitle.Hide();
+
             gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
             gg.DrawImage(pMeteor.Image, new Rectangle(50, 50, 70, 70));
 

@@ -21,6 +21,7 @@ namespace Meteor_Game
         Random rand = new Random();
         int RR;             //隕石の半径
         Boolean hitFlg;     //true:当たった
+        int ecnt, ex, ey;   //爆発演出用
         public Form1()
         {
             InitializeComponent();
@@ -50,12 +51,35 @@ namespace Meteor_Game
                 enY[i] = rand.Next(1, 900) - 1000;
             }
             hitFlg = false;　//false:当たっていない
+            ecnt = 40;      //爆発の初めの処理で位置を変更する
+                            //40を代入することで条件文が実行される
+        }
+        //爆発演出
+        private void playerExplosion()
+        {
+            ecnt += 4;      //ecntは拡縮のサイズにも利用している
+            if (ecnt > 40)
+            {
+                ecnt = 8;
+                ex = Cpos.X + rand.Next(40);　//爆発の位置を変更
+                ey = 220 + rand.Next(50);     //自機の座標に乱数を加算
+            }
+            //爆発演出中の描画は、すべてここで行う
+            gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
+            for (int i = 0; i < 10; i++)
+            {
+                gg.DrawImage(pMeteor.Image, new Rectangle(enX[i], enY[i], RR * 2, RR * 2));
+            }
+            gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X, 220, PW, PH));
+            gg.DrawImage(pExp.Image, new Rectangle(ex - ecnt / 2, ey - ecnt / 2, ecnt, ecnt));
+            pBase.Image = canvas;               //↑拡縮のサイズの半分を引くことで、指定座標を中心に拡縮される
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (hitFlg)
             {
+                playerExplosion();
                 return;     //自機と隕石が当たったらこの先の処理をしない
             }
             gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));

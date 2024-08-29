@@ -54,6 +54,7 @@
             this.pMsg.Location = new System.Drawing.Point(261, 172);
             this.pMsg.Name = "pMsg";
             this.pMsg.Size = new System.Drawing.Size(98, 49);
+            this.pMsg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pMsg.TabIndex = 7;
             this.pMsg.TabStop = false;
             // 
@@ -63,6 +64,7 @@
             this.pGameover.Location = new System.Drawing.Point(323, 35);
             this.pGameover.Name = "pGameover";
             this.pGameover.Size = new System.Drawing.Size(111, 75);
+            this.pGameover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pGameover.TabIndex = 6;
             this.pGameover.TabStop = false;
             // 
@@ -72,6 +74,7 @@
             this.pTitle.Location = new System.Drawing.Point(85, 154);
             this.pTitle.Name = "pTitle";
             this.pTitle.Size = new System.Drawing.Size(140, 94);
+            this.pTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pTitle.TabIndex = 5;
             this.pTitle.TabStop = false;
             // 
@@ -81,6 +84,7 @@
             this.pExp.Location = new System.Drawing.Point(199, 34);
             this.pExp.Name = "pExp";
             this.pExp.Size = new System.Drawing.Size(104, 70);
+            this.pExp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pExp.TabIndex = 4;
             this.pExp.TabStop = false;
             // 
@@ -90,6 +94,7 @@
             this.pPlayer.Location = new System.Drawing.Point(12, 180);
             this.pPlayer.Name = "pPlayer";
             this.pPlayer.Size = new System.Drawing.Size(51, 55);
+            this.pPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pPlayer.TabIndex = 3;
             this.pPlayer.TabStop = false;
             // 
@@ -97,7 +102,8 @@
             // 
             this.pBase.Location = new System.Drawing.Point(-3, 0);
             this.pBase.Name = "pBase";
-            this.pBase.Size = new System.Drawing.Size(615, 434);
+            this.pBase.Size = new System.Drawing.Size(617, 437);
+            this.pBase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBase.TabIndex = 2;
             this.pBase.TabStop = false;
             this.pBase.Click += new System.EventHandler(this.pBase_Click);
@@ -108,6 +114,7 @@
             this.pMeteor.Location = new System.Drawing.Point(58, 34);
             this.pMeteor.Name = "pMeteor";
             this.pMeteor.Size = new System.Drawing.Size(84, 76);
+            this.pMeteor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pMeteor.TabIndex = 0;
             this.pMeteor.TabStop = false;
             // 
@@ -117,6 +124,7 @@
             this.pBG.Location = new System.Drawing.Point(12, 12);
             this.pBG.Name = "pBG";
             this.pBG.Size = new System.Drawing.Size(170, 124);
+            this.pBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBG.TabIndex = 1;
             this.pBG.TabStop = false;
             // 

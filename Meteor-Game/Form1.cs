@@ -67,7 +67,7 @@ namespace Meteor_Game
             }
 
             Cpos = PointToClient(Cursor.Position);
-            
+
             if (Cpos.X < 0) //画面外へ出ないように変更
             {
                 Cpos.X = 0;
@@ -76,10 +76,31 @@ namespace Meteor_Game
             {
                 Cpos.X = Width - PW;
             }
-            gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X,220,PW,PH));
-                        //↑自機の絵                  ↑カーソルのx座標のみ利用
+            gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X, 220, PW, PH));
+            //↑自機の絵                  ↑カーソルのx座標のみ利用
 
             pBase.Image = canvas;
+            hitCheck(); //当たり判定
+        }
+        //自機と隕石の当たり判定
+        private void hitCheck()
+        {
+            int pcx = Cpos.X + (PW / 2);    //自機の中心座標
+            int pcy = 220 + (PH / 2);
+            int ecx, ecy, dis;              //自機と隕石の距離計算用
+
+            Text = "";  //タイトルを消す
+            for (int i = 0; i < 10; i++)
+            {
+                ecx = enX[i] + RR;
+                ecy = enY[i] + RR;
+                dis = (ecx - pcx) * (ecx - pcx) + (ecy - pcy) * (ecy - pcy);    //自機と隕石の距離を算出
+                if (dis < RR * RR) //2点間の距離として比較しているのは、隕石の半径
+                {
+                    Text = "hit";  //タイトルに表示
+                    break;          //forから抜ける
+                }
+            }
         }
     }
 }

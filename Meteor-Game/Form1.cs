@@ -14,6 +14,7 @@ namespace Meteor_Game
     {
         static Bitmap canvas = new Bitmap(480, 320);
         Graphics gg = Graphics.FromImage(canvas);
+        int PW, PH;　//自機の幅、高さ調整
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +34,19 @@ namespace Meteor_Game
             gg.DrawImage(pMeteor.Image, new Rectangle(50, 50, 70, 70));
 
             pBase.Image = canvas;
+
+            initGame(); //初期処理
+        }
+
+        private void initGame()
+        {
+            PW = 38;        //自機の幅
+            PH = 48;        //自機の高さ
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Meteor_Game
         int[] enY = new int[10];    //配列の宣言
         Random rand = new Random();
         int RR;             //隕石の半径
+        Boolean hitFlg;     //true:当たった
         public Form1()
         {
             InitializeComponent();
@@ -48,10 +49,15 @@ namespace Meteor_Game
                 enX[i] = rand.Next(1, 450); //隕石の初期配置座標
                 enY[i] = rand.Next(1, 900) - 1000;
             }
+            hitFlg = false;　//false:当たっていない
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (hitFlg)
+            {
+                return;     //自機と隕石が当たったらこの先の処理をしない
+            }
             gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
 
             //隕石の移動
@@ -89,7 +95,6 @@ namespace Meteor_Game
             int pcy = 220 + (PH / 2);
             int ecx, ecy, dis;              //自機と隕石の距離計算用
 
-            Text = "";  //タイトルを消す
             for (int i = 0; i < 10; i++)
             {
                 ecx = enX[i] + RR;
@@ -97,7 +102,7 @@ namespace Meteor_Game
                 dis = (ecx - pcx) * (ecx - pcx) + (ecy - pcy) * (ecy - pcy);    //自機と隕石の距離を算出
                 if (dis < RR * RR) //2点間の距離として比較しているのは、隕石の半径
                 {
-                    Text = "hit";  //タイトルに表示
+                    hitFlg = true;  //true:当たった
                     break;          //forから抜ける
                 }
             }

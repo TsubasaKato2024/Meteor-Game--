@@ -95,9 +95,9 @@
             // 
             // pBase
             // 
-            this.pBase.Location = new System.Drawing.Point(0, 1);
+            this.pBase.Location = new System.Drawing.Point(-3, 0);
             this.pBase.Name = "pBase";
-            this.pBase.Size = new System.Drawing.Size(462, 273);
+            this.pBase.Size = new System.Drawing.Size(615, 404);
             this.pBase.TabIndex = 2;
             this.pBase.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 273);
+            this.ClientSize = new System.Drawing.Size(612, 433);
             this.Controls.Add(this.pMsg);
             this.Controls.Add(this.pGameover);
             this.Controls.Add(this.pTitle);

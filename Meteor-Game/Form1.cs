@@ -22,6 +22,9 @@ namespace Meteor_Game
         int RR;             //隕石の半径
         Boolean hitFlg;     //true:当たった
         int ecnt, ex, ey;   //爆発演出用
+        long msgcnt;        //メッセージ用カウンタ
+        Boolean titleFlg;   //true:タイトル表示中
+
         public Form1()
         {
             InitializeComponent();
@@ -53,7 +56,27 @@ namespace Meteor_Game
             hitFlg = false;　//false:当たっていない
             ecnt = 40;      //爆発の初めの処理で位置を変更する
                             //40を代入することで条件文が実行される
+            msgcnt = 0;     //メッセージ用カウンタ
+            titleFlg = true;//true:タイトル表示中
         }
+
+        private void pBase_Click(object sender, EventArgs e)    //リトライの仕組み
+        {
+            if (titleFlg)   //タイトル表示中のみ
+            {
+                if (msgcnt > 20)
+                {
+                    msgcnt = 0;
+                    titleFlg = false;
+                }
+                return;     //タイトル表示中はこの先の処理をしない
+            }
+            if (msgcnt > 80)    //msgcnt が 80 以上ならゲームの初期化をするようにする
+            {
+                initGame();     //ベースクリックでルトライ
+            }
+        }
+
         //爆発演出
         private void playerExplosion()
         {
@@ -72,11 +95,39 @@ namespace Meteor_Game
             }
             gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X, 220, PW, PH));
             gg.DrawImage(pExp.Image, new Rectangle(ex - ecnt / 2, ey - ecnt / 2, ecnt, ecnt));
-            pBase.Image = canvas;               //↑拡縮のサイズの半分を引くことで、指定座標を中心に拡縮される
+                                                    //↑拡縮のサイズの半分を引くことで、指定座標を中心に拡縮される
+            msgcnt++;     //ゲームオーバー表示方法              
+            if (msgcnt > 60)
+            {
+                gg.DrawImage(pGameover.Image, new Rectangle(70, 80, 350, 60));
+                if (msgcnt % 60 > 20)
+                {
+                    gg.DrawImage(pMsg.Image, new Rectangle(110, 190, 271, 26));
+                }
+            }
+            pBase.Image = canvas;
+        }
+
+        private void dispTitle()
+        {
+            msgcnt++;
+            //タイトル表示中の描画は、すべてここで行う
+            gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
+            gg.DrawImage(pTitle.Image, new Rectangle(70, 80, 350, 60));
+            if (msgcnt % 60 > 20)
+            {
+                gg.DrawImage(pMsg.Image, new Rectangle(110, 190, 271, 26));
+            }
+            pBase.Image = canvas;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (titleFlg)
+            {
+                dispTitle();
+                return;         //タイトル表示中はこの先の処理はしない
+            }
             if (hitFlg)
             {
                 playerExplosion();

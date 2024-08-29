@@ -100,6 +100,7 @@
             this.pBase.Size = new System.Drawing.Size(615, 434);
             this.pBase.TabIndex = 2;
             this.pBase.TabStop = false;
+            this.pBase.Click += new System.EventHandler(this.pBase_Click);
             // 
             // pMeteor
             // 

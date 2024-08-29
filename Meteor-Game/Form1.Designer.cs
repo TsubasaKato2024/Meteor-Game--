@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pMsg = new System.Windows.Forms.PictureBox();
             this.pGameover = new System.Windows.Forms.PictureBox();
             this.pTitle = new System.Windows.Forms.PictureBox();
@@ -36,6 +37,7 @@
             this.pBase = new System.Windows.Forms.PictureBox();
             this.pMeteor = new System.Windows.Forms.PictureBox();
             this.pBG = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pMsg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pGameover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTitle)).BeginInit();
@@ -93,9 +95,9 @@
             // 
             // pBase
             // 
-            this.pBase.Location = new System.Drawing.Point(231, 12);
+            this.pBase.Location = new System.Drawing.Point(0, 1);
             this.pBase.Name = "pBase";
-            this.pBase.Size = new System.Drawing.Size(219, 249);
+            this.pBase.Size = new System.Drawing.Size(462, 273);
             this.pBase.TabIndex = 2;
             this.pBase.TabStop = false;
             // 
@@ -116,6 +118,12 @@
             this.pBG.Size = new System.Drawing.Size(170, 124);
             this.pBG.TabIndex = 1;
             this.pBG.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -155,6 +163,7 @@
         private System.Windows.Forms.PictureBox pTitle;
         private System.Windows.Forms.PictureBox pGameover;
         private System.Windows.Forms.PictureBox pMsg;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

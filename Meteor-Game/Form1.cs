@@ -15,6 +15,7 @@ namespace Meteor_Game
         static Bitmap canvas = new Bitmap(480, 320);
         Graphics gg = Graphics.FromImage(canvas);
         int PW, PH;　//自機の幅、高さ調整
+        Point Cpos; //カーソル座標
         public Form1()
         {
             InitializeComponent();
@@ -30,11 +31,6 @@ namespace Meteor_Game
             pMsg.Hide();
             pTitle.Hide();
 
-            gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
-            gg.DrawImage(pMeteor.Image, new Rectangle(50, 50, 70, 70));
-
-            pBase.Image = canvas;
-
             initGame(); //初期処理
         }
 
@@ -46,7 +42,22 @@ namespace Meteor_Game
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            gg.DrawImage(pBG.Image, new Rectangle(0, 0, 480, 320));
 
+            Cpos = PointToClient(Cursor.Position);
+            
+            if (Cpos.X < 0) //画面外へ出ないように変更
+            {
+                Cpos.X = 0;
+            }
+            if (Cpos.X > Width - PW)
+            {
+                Cpos.X = Width - PW;
+            }
+            gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X,220,PW,PH));
+                        //↑自機の絵                  ↑カーソルのx座標のみ利用
+
+            pBase.Image = canvas;
         }
     }
 }

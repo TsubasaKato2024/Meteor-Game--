@@ -24,6 +24,8 @@ namespace Meteor_Game
         int ecnt, ex, ey;   //爆発演出用
         long msgcnt;        //メッセージ用カウンタ
         Boolean titleFlg;   //true:タイトル表示中
+        long score;         //スコア
+        Font myFont = new Font("Arial", 16); //フォントタイプ,フォントサイズ
 
         public Form1()
         {
@@ -54,10 +56,10 @@ namespace Meteor_Game
                 enY[i] = rand.Next(1, 900) - 1000;
             }
             hitFlg = false;　//false:当たっていない
-            ecnt = 40;      //爆発の初めの処理で位置を変更する
-                            //40を代入することで条件文が実行される
+            ecnt = 40;      //爆発の初めの処理で位置を変更する//40を代入することで条件文が実行される
             msgcnt = 0;     //メッセージ用カウンタ
             titleFlg = true;//true:タイトル表示中
+            score = 0;      //スコア
         }
 
         private void pBase_Click(object sender, EventArgs e)    //リトライの仕組み
@@ -73,7 +75,7 @@ namespace Meteor_Game
             }
             if (msgcnt > 80)    //msgcnt が 80 以上ならゲームの初期化をするようにする
             {
-                initGame();     //ベースクリックでルトライ
+                initGame();     //ベースクリックでリトライ
             }
         }
 
@@ -105,9 +107,11 @@ namespace Meteor_Game
                     gg.DrawImage(pMsg.Image, new Rectangle(110, 190, 271, 26));
                 }
             }
+            gg.DrawString("SCORE: " + score.ToString(), myFont, Brushes.White, 10, 10); //スコア
             pBase.Image = canvas;
         }
 
+        //タイトル表示
         private void dispTitle()
         {
             msgcnt++;
@@ -159,6 +163,9 @@ namespace Meteor_Game
             }
             gg.DrawImage(pPlayer.Image, new Rectangle(Cpos.X, 220, PW, PH));
             //↑自機の絵                  ↑カーソルのx座標のみ利用
+
+            score++;
+            gg.DrawString("SCORE: " + score.ToString(), myFont, Brushes.White, 10, 10); //スコア
 
             pBase.Image = canvas;
             hitCheck(); //当たり判定

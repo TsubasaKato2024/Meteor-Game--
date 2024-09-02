@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,6 +61,12 @@ namespace Meteor_Game
             msgcnt = 0;     //メッセージ用カウンタ
             titleFlg = true;//true:タイトル表示中
             score = 0;      //スコア
+            using (SoundPlayer player1 = new SoundPlayer(@"Ladder_to_the_Dream_1.wav"))　//サウンドBGM
+            {
+                player1.Load();
+                player1.Play();
+
+            }
         }
 
         private void pBase_Click(object sender, EventArgs e)    //リトライの仕組み
@@ -185,6 +192,11 @@ namespace Meteor_Game
                 if (dis < RR * RR) //2点間の距離として比較しているのは、隕石の半径
                 {
                     hitFlg = true;  //true:当たった
+                    using (SoundPlayer player2 = new SoundPlayer(@"爆発2.wav")) //サウンド隕石当たった時
+                    {
+                        player2.Load();
+                        player2.Play();
+                    }
                     break;          //forから抜ける
                 }
             }
